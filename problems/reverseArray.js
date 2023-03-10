@@ -2,7 +2,7 @@ console.log('************REVERSE ARRAY***************');
 const reverseArray = function (arr) {
   let n = arr.length;
   function reverse(arr, i, j) {
-    console.log(n - 1);
+    console.log(i, j);
     if (i < j) {
       let temp = arr[i];
       arr[i] = arr[j];
@@ -13,4 +13,4 @@ const reverseArray = function (arr) {
   return reverse(arr, 0, n - 1);
 };
 
-console.log('Hello', reverseArray([1, 2, 3, 4, 5, 6]));
+console.log(reverseArray([1, 2, 3, 4, 5]));
