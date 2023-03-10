@@ -29,8 +29,8 @@ var isPalindrome = function (s) {
   return isPal(str, 0, n - 1);
 };
 
-console.log(
-  isPalindrome('A man, a plan, a canal: Panama')
-    ? 'Input is a pallindrom'
-    : 'Input is not a pallindrome'
-);
+// console.log(
+isPalindrome('A man, a plan, a canal: Panama');
+// ? 'Input is a pallindrom'
+// : 'Input is not a pallindrome'
+// );
