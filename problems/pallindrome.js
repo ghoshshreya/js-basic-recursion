@@ -1,36 +1,13 @@
-// A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
-
-// A man, a plan, a canal: Panama --> amanaplanacanalpanama
-
-// RECURSIVE APPROACH
-// AMAMA --> AMAMA
-// 1. A === A
-// 2. M === M
-// 3. A is the last element
-// Hence, pallindrome
-
-// AMAMA --> AMAZA
-// 1. A === A
-// 2. M !== Z, break not a pallindrome
-
-var isPalindrome = function (s) {
-  let str = s
-    .toLowerCase()
-    .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<> \{\}\[\]\\\/]/gi, '');
-  let n = str.length;
-  function isPal(str, startIndex, endIndex) {
-    if (startIndex === endIndex) {
-      return true;
-    } else if (str[startIndex] === str[endIndex]) {
-      return isPal(str, startIndex + 1, endIndex - 1);
-    }
-    return false;
+function isPallindrom(input) {
+  let sum = 0;
+  function check(num, x) {
+    if (num === 0) return sum;
+    x = (num % 10) * Math.pow(10, num.toString().length - 1);
+    sum = sum + x;
+    return check(Math.floor(num / 10));
   }
-  return isPal(str, 0, n - 1);
-};
+  const reverse = check(input);
+  return reverse === input;
+}
 
-// console.log(
-isPalindrome('A man, a plan, a canal: Panama');
-// ? 'Input is a pallindrom'
-// : 'Input is not a pallindrome'
-// );
+console.log(isPallindrom(121));
